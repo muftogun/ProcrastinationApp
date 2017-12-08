@@ -1,9 +1,11 @@
 package com.team1.cmsc434.procrastinationapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -22,6 +24,7 @@ public class ViewDetails extends AppCompatActivity {
     TextView taskDifficulty;
     RatingBar taskImportance;
     TextView taskDetails;
+    Button editTaskButton;
 
     @Override
     public void onCreate(Bundle savedInstanceStance) {
@@ -34,6 +37,7 @@ public class ViewDetails extends AppCompatActivity {
         taskDifficulty = findViewById(R.id.difficulty_details);
         taskImportance = findViewById(R.id.ratingBar);
         taskDetails = findViewById(R.id.details_field);
+        editTaskButton = findViewById(R.id.edittask);
 
         Task task = new Task(getIntent());
 
@@ -43,5 +47,17 @@ public class ViewDetails extends AppCompatActivity {
         taskDifficulty.setText(task.difficulty.name());
         taskImportance.setRating(task.importance);
         taskDetails.setText(task.details);
+
+        editTaskButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Task task = new Task(getIntent());
+                Intent intent = task.packageToIntent();
+
+                intent.setClass(getApplicationContext(),EditTask.class);
+                startActivity(intent);
+                //startActivity(new Intent(getApplicationContext(), EditTask.class));
+            }
+        });
     }
 }
