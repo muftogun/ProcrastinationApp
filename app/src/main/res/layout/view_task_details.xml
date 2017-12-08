@@ -89,7 +89,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginBottom="11dp"
+                android:layout_marginBottom="24dp"
                 android:gravity="right"
                 android:padding="5dp"
                 android:text="@string/task_difficulty"
@@ -106,7 +106,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentStart="true"
                 android:layout_marginBottom="12dp"
-                android:padding="5dp"
+                android:padding="10dp"
                 android:text="@string/task_urgency"
                 android:gravity="right"
                 android:textAlignment="gravity"
@@ -144,7 +144,7 @@
             <TextView
                 android:id="@+id/deadline_details"
                 android:layout_width="match_parent"
-                android:layout_height="68dp"
+                android:layout_height="wrap_content"
                 android:gravity="left"
                 android:hint="Date Goes Here"
                 android:padding="5dp"
@@ -157,15 +157,16 @@
                 android:id="@+id/difficulty_details"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:hint="Difficulty Goes Here"
-                android:padding="4dp"
+                android:padding="10dp"
                 android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
 
             <RatingBar
                 android:id="@+id/ratingBar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:padding="5dp"/>
 
 
         </LinearLayout>
@@ -205,7 +206,21 @@
             android:layout_alignParentStart="true"
             android:layout_below="@+id/details_field"
             android:text="Task Complete"
-            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium" />
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:id="@+id/checkBox2" />
+
+        <Button
+            android:id="@+id/edittask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/checkBox2"
+            android:layout_alignBottom="@+id/checkBox2"
+            android:layout_marginLeft="18dp"
+            android:layout_marginStart="18dp"
+            android:layout_toEndOf="@+id/Comments"
+            android:layout_toRightOf="@+id/Comments"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+            android:text="Edit Task" />
 
     </RelativeLayout>
 </LinearLayout>
