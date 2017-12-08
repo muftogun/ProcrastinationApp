@@ -1,5 +1,6 @@
 package com.team1.cmsc434.procrastinationapp;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ public class HomeActivity extends AppCompatActivity {
     ImageButton viewAllButton;
     ImageButton addNewButton;
 
+    @SuppressLint("WrongViewCast")
     @Override
     public void onCreate(Bundle savedInstanceStance) {
         super.onCreate(savedInstanceStance);
